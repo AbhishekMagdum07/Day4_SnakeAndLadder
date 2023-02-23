@@ -34,6 +34,9 @@ public class SnakeAndLadder {
                 default:
                     System.out.println("No Play");
             }
+            if(position > 100){
+                position = 0;
+            }
         }
 
         System.out.println("Player Position is = "+position);
