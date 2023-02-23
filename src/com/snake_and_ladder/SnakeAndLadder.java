@@ -7,12 +7,15 @@ public class SnakeAndLadder {
         System.out.println("Welcome to Snake and Ladder Programme");
         System.out.println("Game will start from position 0 ");
         int position = 0 ;
+        int dieCount = 0 ;
 
         //Uc2 - The Player rolls the die to get a number between 1 to 6.
         while (position < 100) {
             Random random = new Random();
             int dice = random.nextInt(6) + 1;
             System.out.println("Dice Number is = " + dice);
+            dieCount++;
+            System.out.println("Position of Die ="+dieCount);
 
             //Uc3 - The Player then checks for Option. They are No Play,Ladder or Snake.
 
@@ -35,10 +38,11 @@ public class SnakeAndLadder {
                     System.out.println("No Play");
             }
             if(position > 100){
-                position = 0;
+                position -= dice;
             }
         }
 
         System.out.println("Player Position is = "+position);
+        System.out.println("Numbers of Times Dice was Played = "+dieCount);
     }
 }
